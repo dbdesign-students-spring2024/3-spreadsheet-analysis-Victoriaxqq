@@ -100,9 +100,10 @@ In addition, our analysis is based on the time period from 1990 to 2021, because
 When we mention "death rate" latter, we mean the death rate under 5 years old. 
 
 ### Purpose
-There are **four** purposes of our research:
+There are **fifth** purposes of our research:
 - Find the world's tendency of death rate (under 5 years old) from 1990 to 2021.
 - Compare the tendency of female's death rate (under 5 years old) and male's death rate (under 5 years old) from 1990 to 2021 in the world.
+- Figure out which country often keep the lowest yearly death rate from 1990 to 2021 among all countries and which country often keep the highest yearly death rate from 1990 to 2021.
 - Find which country has the highest average death rate (under 5 years old) from 1990 to 2021 and which country has the lowest average death rate (under 5 years old) from 1990 to 2021.
 - Find how difference average death rate (under 5 years old) among 206 countries from 1990 to 2021. 
 
@@ -110,11 +111,13 @@ There are **four** purposes of our research:
 ### Statistics
 In order to find the world's tendency of death rate (under 5 years old) from 1990 to 2021, we use function in Excel called `AVERAGEIFS` to find the average death rate of the world from 1990 to 2021. In this part, we use variables: time and sex (Total) as our conditions. 
 
-In order to compare the tendency of female's death rate (under 5 years old) and male's death rate (under 5 years old) from 1990 to 2021, we also use the function `AVERAGEIFS` to find the world's average death rate of female and male from 1990 to 2021. In this part, we use variables: time and sex (Female and male) as our conditions.
+In order to compare the tendency of female's death rate (under 5 years old) and male's death rate (under 5 years old) from 1990 to 2021, we also use the function `AVERAGEIFS` to find the world's average death rate of female and male from 1990 to 2021. In this part, we use variables: time and sex (Female and male) as our conditions. 
+
+In order to figure out which country often keep the lowest yearly death rate  from 1990 to 2021 among all countries and which country often keep the highest yearly death rate from 1990 to 2021, we use `MAXIFS` and `MINIFS` to find the to find which death rate is the highest or lowest per year. In this part, we use variables: time and sex (Total) as our condition. Then we use `INDEX` function to find corresponding countries with the values. Then we use `COUNTIFS` to find the number of occurrences of each country and then use `MAX` and `INDEX` to find the the countries with highest frequency of keeping the largest/lowest yearly death rate.
 
 In order to find which country has the highest average death rate (under 5 years old) from 1990 to 2021 and which country has the lowest average death rate (under 5 years old) from 1990 to 2021, we use the function `AVERAGEIFS` first to find the average death rate of each country from 1990 to 2021. In this part, we use variables: country and sex (Total) as our conditions. Then we use the `MAX` and `MIN` functions to find the maximum and minimum values of the average data we get from the last part.
 
-In order to find how difference average death rate (under 5 years old) among 206 countries from 1990 to 2021, we use `STDEV` function to find the standard deviation of the average data we get from the last part. 
+In order to find how difference average death rate (under 5 years old) among 206 countries from 1990 to 2021, we use `STDEV` and `AVERAGE` function to find the standard deviation and mean of the average data we get from the last part. 
 
 ### Analysis
 Based on the all statistics we get, we can analysis the data.
@@ -124,7 +127,10 @@ In this chart, the blue line represents the world's death rate per year, the org
 
 In this chart, we achieved our first purpose: _Find the world's tendency of death rate (under 5 years old) from 1990 to 2021._ We find that the world's death rate (under 5 years old) is decreasing from 1990 to 2021.
 
+
 In addition, we also achieved our second purpose: _Compare the tendency of female's death rate (under 5 years old) and male's death rate (under 5 years old) from 1990 to 2021 in the world._ We find that females are more likely to alive than males under 5 years old around the world, though the both death rates of female and death rates of male follow a descending tendency.
+
+We also achieved our third purpose: _Figure out which country often keep the lowest yearly death rate from 1990 to 2021 among all countries and which country often keep the highest yearly death rate from 1990 to 2021._ We find that the ***Niger*** is the country often keep the highest yearly death rate from 1990 to 2021 among all countries with frequency _8/31_ and ***Singapore*** is the country often keep the lowest yearly death rate with frequency _11/31_ from 1990 to 2021.
 
 Then we build a pivot table to store our data of the average death rate of each country. Here are a sample of our pivot table (In another sheet of our xlsx file):
 | Country  | Average Death Rate of All Genders (from 1990 to 2021)| 
@@ -136,9 +142,12 @@ Then we build a pivot table to store our data of the average death rate of each 
 | Albania | 2.110625 |
 | Americas | 2.335625 |
 
-By this pivot table, we achieved our third purpose: _Find which country has the highest average death rate (under 5 years old) from 1990 to 2021 and which country has the lowest average death rate (under 5 years old) from 1990 to 2021._ We find minimum and maximum values of the table. The result is that the country with **maximum** average death rate from 1990 to 2021 is _Niger_  which is around 19.14% and the country with **minimum** average death rate from 1990 to 2021 is _Singapore_ which is around 0.37%.
+By this pivot table, we achieved our fourth purpose: _Find which country has the highest average death rate (under 5 years old) from 1990 to 2021 and which country has the lowest average death rate (under 5 years old) from 1990 to 2021._ We find minimum and maximum values of the table. The result is that the country with **maximum** average death rate from 1990 to 2021 is _Niger_  which is around 19.14% and the country with **minimum** average death rate from 1990 to 2021 is _Singapore_ which is around 0.37%. In addition, we find that our result of third purpose also indirectly support the result of the fourth purpose
 
 Then for our last purpose: _Find how difference average death rate (under 5 years old) among 206 countries from 1990 to 2021_, we calculate standard deviation and range of this pivot table. The range is around 18.78% and standard deviation is around 4.53%. By these two statistic value, we can conclude that death rates among children under five from 1990 to 2021 fluctuate widely across countries. To be more specific, the different of average death rate among 206 countries from 1990 to 2021 is relatively large.
+
+
+
 
 ### Conclusion
 In this research, we make four purposes before analysing our data and then use statistics to achieve them. As the result, we find that the world's death rate (under 5 years old) is decreasing from 1990 to 2021. We are very glad to see this tendency, and we hope the death rate can be as lower as possible in the future. And we find that females are more likely to alive than males under 5 years old around the world, though the both death rates of female and death rates of male follow a descending tendency. In addition, we observe that the country with **maximum** average death rate from 1990 to 2021 is _Niger_  which is around 19.14% and the country with **minimum** average death rate from 1990 to 2021 is _Singapore_ which is around 0.37%. The difference between two countries are visibly huge, this may be related to factors such as the medical conditions, economic development levels, public health policies, and culture of each country. Additioanlly, we obseve that the different of average death rate among 206 countries from 1990 to 2021 is relatively large. Countries have considerable room for improvement when it comes to reducing under-five mortality. Effective public health measures and medical interventions are needed to improve child health, especially in countries with higher mortality rates.
